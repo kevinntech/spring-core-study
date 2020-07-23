@@ -2,20 +2,22 @@ package me.whiteship.demospring51;
 
 import org.springframework.context.ApplicationEvent;
 
-public class MyEvent extends ApplicationEvent {
+public class MyEvent{
 
     private int data;
 
-    public MyEvent(Object source) {
-        super(source);
-    }
+    private Object source;
 
-    public MyEvent(Object source, int data){
-        super(source);
+    public MyEvent(Object source, int data) {
+        this.source = source;
         this.data = data;
     }
 
-    public int getData(){
+    public int getData() {
         return data;
+    }
+
+    public Object getSource() {
+        return source;
     }
 }
