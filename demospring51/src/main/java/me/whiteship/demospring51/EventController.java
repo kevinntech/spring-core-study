@@ -9,12 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EventController {
 
-    @InitBinder
-    public void init(WebDataBinder webDataBinder){
-        // webDataBinder에 Event 클래스 타입을 처리할 PropertyEditor를 등록 합니다.
-        webDataBinder.registerCustomEditor(Event.class, new EventEditor());
-    }
-
     @GetMapping("/event/{event}")
     public String getEvent(@PathVariable Event event){
         System.out.println(event);
